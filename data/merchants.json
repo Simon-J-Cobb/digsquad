@@ -1,0 +1,21 @@
+{
+  "userName": "Mr Green",
+  "data": [
+    {
+      "merchantName": "Uber",
+      "amount": 10.05
+    },
+    {
+      "merchantName": "King Gaming",
+      "amount": 5.37
+    },
+    {
+      "merchantName": "TfL",
+      "amount": 3.47
+    },
+    {
+      "merchantName": "Amazon.co.uk",
+      "amount": 2.21
+    }
+  ]
+}
