@@ -1,0 +1,17 @@
+{
+  "userName": "Mr Green",
+  "data": [
+    {
+      "charityName": "Amazon Forest Fund",
+      "amount": 11.23
+    },
+    {
+      "charityName": "Save Pretty Fluffy Kittens, Please !!!",
+      "amount": 7.44
+    },
+    {
+      "charityName": "Alternative Energy Institute",
+      "amount": 2.43
+    }
+  ]
+}
