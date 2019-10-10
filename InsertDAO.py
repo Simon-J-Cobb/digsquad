@@ -1,3 +1,4 @@
+  
 import mysql.connector
 
 
@@ -17,12 +18,23 @@ class InsertDAO:
         self.myCursor.execute(sql)
         self.mydb.commit()
 
-def execute_insert():
+def execute_insert(columns, value):
     inserter = InsertDAO()
-
-    columns = 'USER_ID, AMOUNT, COMPANY_ID, CHARITY_ID'
-    value = '007', '1000.15', 'MI5', 'WWF'
-
     inserter.insert(columns, value)
 
-execute_insert()
+columns = 'USER_ID, AMOUNT, COMPANY_ID, CHARITY_ID'
+value1 = '002', '10.67', 'Asda', 'Greenpeace Fund'
+value2 = '002', '74734.99', 'DB', 'Earth Justice'
+value3 = '003', '1000.15', 'DB', 'WWF'
+value4 = '004', '10.15', 'DB', 'Greenpeace Fund'
+value5 = '005', '760.15', 'MI5', 'Earth Justice'
+value6 = '006', '180.15', 'MI5', 'WWF'
+value7 = '007', '1.15', 'MI5', 'Green Peace'
+
+execute_insert(columns, value1)
+execute_insert(columns, value2)
+execute_insert(columns, value3)
+execute_insert(columns, value4)
+execute_insert(columns, value5)
+execute_insert(columns, value6)
+execute_insert(columns, value7)

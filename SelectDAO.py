@@ -17,8 +17,27 @@ class SelectDAO:
         self.myCursor.execute(sql)
         return json.dumps(self.myCursor.fetchall())
 
-def execute_select():
-    selector = SelectDAO()
-    return selector.select_all(selector.table)
+    def select_user(self, user):
+        sql = 'SELECT * FROM {0} WHERE USER_ID={1}'.format(self.table, user)
+        self.myCursor.execute(sql)
+        return json.dumps(self.myCursor.fetchall())
 
-print(execute_select())
+    def select_comp_agg(self, user):
+        sql = 'SELECT COMPANY_ID, ROUND(SUM(AMOUNT),2) AS AGGREGATE FROM {0} WHERE USER_ID={1} GROUP BY COMPANY_ID;'.format(self.table, user)
+        self.myCursor.execute(sql)
+        row_headers = [x[0] for x in self.myCursor.description]
+        rv = self.myCursor.fetchall()
+        json_data = []
+        for result in rv:
+            json_data.append(dict(zip(row_headers, result)))
+        return json.dumps(json_data)
+
+    def select_char_agg(self, user):
+        sql = 'SELECT CHARITY_ID, ROUND(SUM(AMOUNT),2) AS AGGREGATE FROM {0} WHERE USER_ID={1} GROUP BY CHARITY_ID;'.format(self.table, user)
+        self.myCursor.execute(sql)
+        row_headers = [x[0] for x in self.myCursor.description]
+        rv = self.myCursor.fetchall()
+        json_data = []
+        for result in rv:
+            json_data.append(dict(zip(row_headers, result)))
+        return json.dumps(json_data)
