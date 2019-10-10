@@ -1,3 +1,4 @@
+--find-links wheelhouse
 flask
 flask-cors
 mysql-connector-python
