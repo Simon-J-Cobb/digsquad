@@ -2,10 +2,12 @@ const button = document.getElementById('post-btn');
 
 button.addEventListener('click', async _ => {
   try {     
-    const response = await fetch("https://www.google.co.uk", {
+    const response = await fetch("https://digsquaddao.azurewebsites.net",
+	{mode: 'cors'},
+	{
       method: 'post',
       body: {
-        // Your body
+        "id":"test"
       }
     });
     console.log('Completed!', response);
