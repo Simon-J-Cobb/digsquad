@@ -4,20 +4,13 @@ import requests
 # from SelectDAO import SelectDAO
 # from InsertDAO import InsertDAO
 
-
-import requests
-r = requests.post("http://127.0.0.1:5000/", data={'foo': 'bar'})
-print(r.text)
-
-
-
 app = Flask(__name__)
 CORS(app)
 
-@app.route("/", methods=['POST'])
+@app.route("/", methods=['POST', 'GET'])
 def result():
-    print(request.form['foo'])
-    return 'Received !'
+    return 'post req'
+
 
 @app.route("/check_connection", methods=['POST', 'GET'])
 def check_connection():
