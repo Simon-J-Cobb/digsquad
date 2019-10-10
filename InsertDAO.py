@@ -1,6 +1,4 @@
 import mysql.connector
-import json
-from sseclient import SSEClient
 
 
 class InsertDAO:
@@ -22,8 +20,8 @@ class InsertDAO:
 def execute_insert():
     inserter = InsertDAO()
 
-    columns = 'USER_ID, AMOUNT, COMPANY_ID, CHARITY_ID, TIME_STAMP'
-    value = '007', '1000.15', 'MI5', 'WWF', '2011-08-09 12:00:00'
+    columns = 'USER_ID, AMOUNT, COMPANY_ID, CHARITY_ID'
+    value = '007', '1000.15', 'MI5', 'WWF'
 
     inserter.insert(columns, value)
 
