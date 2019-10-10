@@ -34,3 +34,19 @@ ul.transactions {
 li.transaction {
 width: 100%;
 }
+
+
+img.icon {
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+}
+
+.transaction-company {
+
+  display: inline-block;
+  vertical-align: middle
+}

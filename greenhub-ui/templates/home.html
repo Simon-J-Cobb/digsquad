@@ -46,7 +46,14 @@
 
             <ul class="list-group list-group-flush transactions">
                 {% for company, s in zipped_data %}
-                    <li class="list-group-item transaction">{{company}} <span style="float: right">{{s}}</span></li>
+                    <li class="list-group-item transaction">
+                        <span style="display:inline-block;">
+                            <img class="icon" src="static/images/apple_logo.png"></img>
+                        </span>
+                        <span class="transaction-company">
+                            {{company}}
+                        </span>
+                        <span style="float: right">{{s}}</span></li>
                 {% endfor %}
             </ul>
         </div>
